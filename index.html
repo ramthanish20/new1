@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <meta name="description" content="Personal portfolio of a developer">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'monospace'],
+                        'rajdhani': ['Rajdhani', 'sans-serif'],
+                    },
+                    colors: {
+                        'cyber-red': '#ff0040',
+                        'cyber-dark': '#0a0a0a',
+                        'cyber-gray': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-rajdhani overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loading" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="cyber-loader mb-4"></div>
+            <p class="font-orbitron text-cyber-red">INITIALIZING...</p>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-40 border-b border-cyber-red/20">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-orbitron text-xl font-bold text-cyber-red">
+                    &lt;/DEV&gt;
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#home" class="nav-link hover:text-cyber-red transition-colors duration-300">HOME</a></li>
+                    <li><a href="#about" class="nav-link hover:text-cyber-red transition-colors duration-300">ABOUT</a></li>
+                    <li><a href="#projects" class="nav-link hover:text-cyber-red transition-colors duration-300">PROJECTS</a></li>
+                    <li><a href="#resume" class="nav-link hover:text-cyber-red transition-colors duration-300">RESUME</a></li>
+                    <li><a href="#contact" class="nav-link hover:text-cyber-red transition-colors duration-300">CONTACT</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block nav-link hover:text-cyber-red transition-colors duration-300">HOME</a></li>
+                    <li><a href="#about" class="block nav-link hover:text-cyber-red transition-colors duration-300">ABOUT</a></li>
+                    <li><a href="#projects" class="block nav-link hover:text-cyber-red transition-colors duration-300">PROJECTS</a></li>
+                    <li><a href="#resume" class="block nav-link hover:text-cyber-red transition-colors duration-300">RESUME</a></li>
+                    <li><a href="#contact" class="block nav-link hover:text-cyber-red transition-colors duration-300">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="cyber-grid"></div>
+        <div class="container mx-auto px-6 text-center z-10">
+            <div class="fade-in-up">
+                <h1 class="font-orbitron text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+                    <span class="text-white">YOUR</span>
+                    <span class="text-cyber-red glow-text"> NAME</span>
+                </h1>
+                <div class="typing-container mb-8">
+                    <p class="text-xl md:text-2xl font-light" id="typing-text">
+                        Full Stack Developer | UI/UX Designer | Problem Solver
+                    </p>
+                </div>
+                <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                    Crafting digital experiences with cutting-edge technology and innovative design
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="cyber-btn">
+                        <i class="fas fa-code mr-2"></i>VIEW PROJECTS
+                    </a>
+                    <a href="#contact" class="cyber-btn-outline">
+                        <i class="fas fa-envelope mr-2"></i>GET IN TOUCH
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-cyber-red text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-cyber-gray/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title">ABOUT <span class="text-cyber-red">ME</span></h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left">
+                    <div class="profile-image-container mb-8 md:mb-0">
+                        <div class="profile-image">
+                            <img src="https://via.placeholder.com/400x400/ff0040/ffffff?text=YOUR+PHOTO" alt="Profile" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-right">
+                    <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-6">
+                        Hello, I'm <span class="text-cyber-red">Developer</span>
+                    </h3>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        I'm a passionate full-stack developer with expertise in modern web technologies. 
+                        I love creating innovative solutions that push the boundaries of what's possible 
+                        in the digital realm.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        When I'm not coding, you can find me exploring new technologies, contributing to 
+                        open-source projects, or sharing knowledge with the developer community.
+                    </p>
+                    
+                    <!-- Skills -->
+                    <div class="mb-8">
+                        <h4 class="font-orbitron text-xl font-bold mb-4 text-cyber-red">SKILLS</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">React</div>
+                            <div class="skill-item">Node.js</div>
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">MongoDB</div>
+                            <div class="skill-item">PostgreSQL</div>
+                            <div class="skill-item">Docker</div>
+                            <div class="skill-item">AWS</div>
+                            <div class="skill-item">Git</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="https://github.com" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title">FEATURED <span class="text-cyber-red">PROJECTS</span></h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card fade-in-up">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/ff0040/ffffff?text=PROJECT+1" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="font-orbitron text-xl font-bold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">
+                            A full-stack e-commerce solution with modern UI/UX and secure payment integration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/ff0040/ffffff?text=PROJECT+2" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="font-orbitron text-xl font-bold mb-2">AI Chat Application</h3>
+                        <p class="text-gray-300 mb-4">
+                            Real-time chat application with AI integration and advanced message features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">OpenAI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/ff0040/ffffff?text=PROJECT+3" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="font-orbitron text-xl font-bold mb-2">Data Visualization Dashboard</h3>
+                        <p class="text-gray-300 mb-4">
+                            Interactive dashboard for complex data analysis with real-time updates.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 bg-cyber-gray/50">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-16">
+                <h2 class="section-title">MY <span class="text-cyber-red">RESUME</span></h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <p class="text-gray-300 text-lg mb-8">
+                    Download my resume to learn more about my experience, skills, and achievements.
+                </p>
+                <a href="resume.pdf" download class="cyber-btn inline-flex items-center" id="download-resume">
+                    <i class="fas fa-download mr-2"></i>DOWNLOAD RESUME
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title">GET IN <span class="text-cyber-red">TOUCH</span></h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <form class="contact-form" id="contact-form">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">NAME</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">EMAIL</label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-6">
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <label for="message">MESSAGE</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="cyber-btn">
+                            <i class="fas fa-paper-plane mr-2"></i>SEND MESSAGE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-cyber-red/20 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                &copy; 2024 Your Name. All rights reserved. | Built with <span class="text-cyber-red">❤</span> and code
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-cyber-red hover:bg-red-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "cyber-portfolio",
+  "version": "1.0.0",
+  "description": "A modern, fully responsive personal portfolio website with a dark cyber theme",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "dev": "live-server --port=8000 --entry-file=index.html",
+    "build": "echo 'No build process needed - static site ready for deployment'",
+    "deploy": "echo 'Upload files to your hosting service or use GitHub Pages'"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "dark-theme",
+    "cyber",
+    "responsive",
+    "html",
+    "css",
+    "javascript",
+    "tailwind"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cyber-portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/cyber-portfolio/issues"
+  },
+  "homepage": "https://yourusername.github.io/cyber-portfolio",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
